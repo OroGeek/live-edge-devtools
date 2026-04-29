@@ -1,0 +1,116 @@
+{
+  "name": "live-edge-devtools",
+  "version": "1.0.0",
+  "description": "Open HTML files with Live Server + Edge DevTools in VS Code — localhost instead of file://",
+  "keywords": [
+    "live server",
+    "edge devtools",
+    "browser",
+    "devtools",
+    "localhost"
+  ],
+  "license": "ISC",
+  "author": "Ahmed Ahmia",
+  "type": "commonjs",
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "undici-types": "^5.26.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "extensionDependencies": [
+    "ritwickdey.liveserver",
+    "ms-edgedevtools.vscode-edge-devtools"
+  ],
+  "displayName": "Live Edge DevTools",
+  "publisher": "orogeek.live-edge-devtools",
+  "categories": [
+    "Debuggers",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:liveEdgeDevtools.openWithLiveServer",
+    "onCommand:liveEdgeDevtools.openScreencastWithLiveServer"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "liveEdgeDevtools.openWithLiveServer",
+        "title": "Open with Live Server + Edge DevTools",
+        "icon": "$(browser)"
+      },
+      {
+        "command": "liveEdgeDevtools.openScreencastWithLiveServer",
+        "title": "Open Screencast with Live Server + Edge DevTools",
+        "icon": "$(device-mobile)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "liveEdgeDevtools.openWithLiveServer",
+          "when": "resourceExtname == .html",
+          "group": "navigation@1"
+        },
+        {
+          "command": "liveEdgeDevtools.openScreencastWithLiveServer",
+          "when": "resourceExtname == .html",
+          "group": "navigation@2"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "liveEdgeDevtools.openWithLiveServer",
+          "when": "resourceExtname == .html",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "liveEdgeDevtools.openWithLiveServer",
+          "when": "resourceExtname == .html",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Live Edge DevTools",
+      "properties": {
+        "liveEdgeDevtools.liveServerPort": {
+          "type": "number",
+          "default": 0,
+          "description": "Override the Live Server port. Set to 0 to auto-detect from Live Server settings (recommended)."
+        },
+        "liveEdgeDevtools.startLiveServerDelay": {
+          "type": "number",
+          "default": 1500,
+          "description": "Milliseconds to wait after starting Live Server before opening Edge DevTools."
+        },
+        "liveEdgeDevtools.openMode": {
+          "type": "string",
+          "enum": [
+            "devtools",
+            "screencast",
+            "ask"
+          ],
+          "default": "devtools",
+          "description": "How to open the browser panel: DevTools panel, Screencast panel, or ask each time."
+        }
+      }
+    }
+  }
+}
