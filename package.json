@@ -12,6 +12,13 @@
   "author": "Ahmed Ahmia",
   "type": "commonjs",
   "main": "./out/extension.js",
+  "files": [
+    "out/**",
+    "images/**",
+    "LICENSE",
+    "README.md",
+    "icon.ico"
+  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
