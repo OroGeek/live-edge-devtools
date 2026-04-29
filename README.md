@@ -21,6 +21,8 @@ The extension will:
 2. Wait until the server is ready
 3. Open Edge DevTools pointed at `http://localhost:<port>/your-file.html`
 
+![alt text](images/tuto.gif)
+
 ## Settings
 
 | Setting | Default | Description |
