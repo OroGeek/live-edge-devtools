@@ -9,7 +9,6 @@
     "devtools",
     "localhost"
   ],
-  "license": "ISC",
   "author": "Ahmed Ahmia",
   "type": "commonjs",
   "main": "./out/extension.js",
@@ -37,7 +36,13 @@
     "ms-edgedevtools.vscode-edge-devtools"
   ],
   "displayName": "Live Edge DevTools",
-  "publisher": "orogeek.live-edge-devtools",
+  "publisher": "orogeek",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OroGeek/live-edge-devtools"
+  },
+  "license": "MIT",
+  "icon": "icon.ico",
   "categories": [
     "Debuggers",
     "Other"
