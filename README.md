@@ -16,7 +16,7 @@ Both of these extensions must be installed:
 - **Open with Live Server + Edge DevTools** — opens Edge DevTools panel at `http://localhost:<port>/your-file.html`
 - **Open Screencast with Live Server + Edge DevTools** — same but opens the Screencast (mobile/device emulation) panel
 
-![Live Edge DevTools context menu](https://raw.githubusercontent.com/OroGeek/live-edge-devtools/refs/heads/master/images/image.jpg)
+![Live Edge DevTools context menu](images/image.png)
 
 The extension will:
 1. Start Live Server automatically (if it isn't running already)
