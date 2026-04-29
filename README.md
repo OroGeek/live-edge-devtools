@@ -16,12 +16,14 @@ Both of these extensions must be installed:
 - **Open with Live Server + Edge DevTools** — opens Edge DevTools panel at `http://localhost:<port>/your-file.html`
 - **Open Screencast with Live Server + Edge DevTools** — same but opens the Screencast (mobile/device emulation) panel
 
+![Live Edge DevTools context menu](images/image.jpg)
+
 The extension will:
 1. Start Live Server automatically (if it isn't running already)
 2. Wait until the server is ready
 3. Open Edge DevTools pointed at `http://localhost:<port>/your-file.html`
 
-![alt text](images/tuto.gif)
+![Live Edge DevTools tuto video](images/tuto.gif)
 
 ## Settings
 
